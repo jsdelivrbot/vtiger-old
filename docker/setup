@@ -1,0 +1,16 @@
+#!/bin/bash
+
+DB_HOST=${VT_DB_HOST:-localhost}
+DB_PORT=${VT_DB_PORT:-3306}
+DB_NAME=${VT_DB_NAME:-vtigercrm}
+DB_USERNAME=${VT_DB_USERNAME:-root}
+DB_PASSWORD=${VT_DB_PASSWORD:-root}
+
+mysql \
+    -h"$DB_HOST" \
+    -P"$DB_PORT" \
+    -u"$DB_USERNAME" \
+    -p"$DB_PASSWORD" \
+    $DB_NAME < devops/mysql/dumps/vtigercrm.sql
+
+echo "vtigercrm install complete."

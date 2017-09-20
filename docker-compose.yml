@@ -6,6 +6,12 @@ services:
     build:
       context: ./docker/
       dockerfile: Dockerfile-vtigercrm
+    environment:
+    - VT_DB_HOST=mysql
+    - VT_DB_PORT=3306
+    - VT_DB_NAME=vtigercrm
+    - VT_DB_USERNAME=vtigercrm
+    - VT_DB_PASSWORD=b016f48d898c745be5ef382254224582
     volumes:
     - .:/var/www/html:rw
     ports:
