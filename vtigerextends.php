@@ -26,3 +26,15 @@ function vtigerextends($name, $callable)
         echo 'Extension installed: '.$name."\n";
     }
 }
+
+//
+vtigerextends('Use action title as method name', function() use ($adb) {
+    require_once 'modules/com_vtiger_workflow/VTEntityMethodManager.inc';
+    $emm = new VTEntityMethodManager($adb);
+    $emm->addEntityMethod(
+        'Contacts',
+        'Action Title as method',
+        'vtigerextends-class.php',
+        'vtigerextends_class_loader'
+    );
+});
