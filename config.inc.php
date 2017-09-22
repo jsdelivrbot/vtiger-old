@@ -18,11 +18,11 @@ version_compare(PHP_VERSION, '5.5.0') <= 0 ? error_reporting(E_WARNING & ~E_NOTI
 //ini_set('display_errors','on'); version_compare(PHP_VERSION, '5.5.0') <= 0 ? error_reporting(E_WARNING & ~E_NOTICE & ~E_DEPRECATED) : error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);   // DEBUGGING
 //ini_set('display_errors','on'); error_reporting(E_ALL); // STRICT DEVELOPMENT
 
-
 include('vtigerversion.php');
 
-// Introducing getenv
-include('vendor/autoload.php');
+// Get .ENV variables file
+include('vendor/vlucas/phpdotenv/src/Loader.php');
+include('vendor/vlucas/phpdotenv/src/Dotenv.php');
 $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();
 
@@ -52,8 +52,8 @@ $HELPDESK_SUPPORT_EMAIL_REPLY_ID = $HELPDESK_SUPPORT_EMAIL_ID;
       db_name
 */
 
-$dbconfig['db_server'] = 'mysql';
-$dbconfig['db_port'] = ':3306';
+$dbconfig['db_server'] = getenv('VT_DB_HOST', 'localhost');
+$dbconfig['db_port'] = ':'.getenv('VT_DB_PORT', '3306');
 $dbconfig['db_username'] = 'root';
 $dbconfig['db_password'] = 'b016f48d898c745be5ef382254224582';
 $dbconfig['db_name'] = 'vtigercrm';

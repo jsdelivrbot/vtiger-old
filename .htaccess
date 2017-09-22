@@ -1,0 +1,3 @@
+
+## Protect .ENV file
+RewriteRule /?\.env$ - [F,L]
