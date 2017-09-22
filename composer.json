@@ -1,0 +1,5 @@
+{"name": "javanile/vtigercrm",
+    "require": {
+        "vlucas/phpdotenv": "^2.4"
+    }
+}

@@ -21,6 +21,13 @@ version_compare(PHP_VERSION, '5.5.0') <= 0 ? error_reporting(E_WARNING & ~E_NOTI
 
 include('vtigerversion.php');
 
+// Introducing getenv
+include('vendor/autoload.php');
+$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv->load();
+
+echo getenv('VT_DB_NAME');
+
 // more than 8MB memory needed for graphics
 // memory limit default value = 64M
 ini_set('memory_limit','512M');
