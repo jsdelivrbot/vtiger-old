@@ -7,6 +7,7 @@ $dotenv->load();
 
 switch ($argv[1]) {
     case 'env':
-        echo $argv[2] ? getenv($argv[2], @$argv[3]) : '';
+        $value = $argv[2] ? getenv($argv[2]) : '';
+        echo $value != '' ? $value : @$argv[3].'';
 }
 
