@@ -91,7 +91,7 @@ $dbconfigoption['ssl'] = false;
 
 $host_name = $dbconfig['db_hostname'];
 
-$site_URL = 'http://localhost:10777/';
+$site_URL = env('VT_SITE_URL', 'http://localhost:'.$_SERVER['SERVER_PORT'].'/');
 
 // url for customer portal (Example: http://vtiger.com/portal)
 $PORTAL_URL = $site_URL.'/customerportal';
