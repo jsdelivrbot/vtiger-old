@@ -2,9 +2,9 @@
 .idea/
 node_modules/
 npm-debug.log
-cache/
-!cache/.gitkeep
 test/templates_c/
 !test/templates_c/.gitkeep
 devops/mysql/volume/
 !devops/mysql/volume/.gitkeep
+/cache/
+!cache/.gitkeep
