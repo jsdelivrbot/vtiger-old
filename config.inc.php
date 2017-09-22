@@ -96,7 +96,7 @@ $site_URL = 'http://localhost:10777/';
 // url for customer portal (Example: http://vtiger.com/portal)
 $PORTAL_URL = $site_URL.'/customerportal';
 // root directory path
-$root_directory = '/var/www/html/';
+$root_directory = __DIR__.'/';
 
 // cache direcory path
 $cache_dir = 'cache/';
