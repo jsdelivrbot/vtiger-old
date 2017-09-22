@@ -6,10 +6,6 @@ DB_NAME=$(php devops/utils.php env VT_DB_NAME vtigercrm)
 DB_USERNAME=$(php devops/utils.php env VT_DB_USERNAME root)
 DB_PASSWORD=$(php devops/utils.php env VT_DB_PASSWORD root)
 
-echo $DB_PORT
-
-exit
-
 mysql \
     -h"$DB_HOST" \
     -P"$DB_PORT" \

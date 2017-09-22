@@ -25,6 +25,10 @@ include('vendor/vlucas/phpdotenv/src/Loader.php');
 include('vendor/vlucas/phpdotenv/src/Dotenv.php');
 $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();
+function env($variable, $default = null) {
+    $value = getenv($variable);
+    return $value ? $value : $default.'';
+}
 
 // more than 8MB memory needed for graphics
 // memory limit default value = 64M
@@ -52,12 +56,12 @@ $HELPDESK_SUPPORT_EMAIL_REPLY_ID = $HELPDESK_SUPPORT_EMAIL_ID;
       db_name
 */
 
-$dbconfig['db_server'] = getenv('VT_DB_HOST', 'localhost');
-$dbconfig['db_port'] = ':'.getenv('VT_DB_PORT', '3306');
-$dbconfig['db_username'] = getenv('VT_DB_USERNAME', 'root');
-$dbconfig['db_password'] = getenv('VT_DB_PASSWORD', 'root');
-$dbconfig['db_name'] = getenv('VT_DB_NAME', 'vtigercrm');
-$dbconfig['db_type'] = getenv('VT_DB_TYPE', 'mysqli');
+$dbconfig['db_server'] = env('VT_DB_HOST', 'localhost');
+$dbconfig['db_port'] = ':'.env('VT_DB_PORT', '3306');
+$dbconfig['db_username'] = env('VT_DB_USERNAME', 'root');
+$dbconfig['db_password'] = env('VT_DB_PASSWORD', 'root');
+$dbconfig['db_name'] = env('VT_DB_NAME', 'vtigercrm');
+$dbconfig['db_type'] = env('VT_DB_TYPE', 'mysqli');
 $dbconfig['db_status'] = 'true';
 
 // TODO: test if port is empty
