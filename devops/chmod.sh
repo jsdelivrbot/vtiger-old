@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd vtigercrm
+cd $(dirname $0)/..
 
 sudo chmod 777 tabdata.php
 sudo chmod 777 config.inc.php
