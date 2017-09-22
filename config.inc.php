@@ -26,8 +26,6 @@ include('vendor/autoload.php');
 $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();
 
-echo getenv('VT_DB_NAME');
-
 // more than 8MB memory needed for graphics
 // memory limit default value = 64M
 ini_set('memory_limit','512M');
