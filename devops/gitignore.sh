@@ -8,5 +8,6 @@ git rm test/templates_c/ -r --cached
 git rm devops/mysql/volume/ -r --cached
 
 git add .
+git add cache/.gitkeep
 git commit -am "removed files"
 git push
