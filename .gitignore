@@ -6,5 +6,5 @@ test/templates_c/
 !test/templates_c/.gitkeep
 devops/mysql/volume/
 !devops/mysql/volume/.gitkeep
-/cache/
+/cache/*
 !cache/.gitkeep
